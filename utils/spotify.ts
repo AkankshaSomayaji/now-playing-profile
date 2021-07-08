@@ -30,7 +30,7 @@ async function getAuthorizationToken() {
   return `Bearer ${response.access_token}`;
 }
 
-const NOW_PLAYING_ENDPOINT = `/me/player/recently-played`;
+const NOW_PLAYING_ENDPOINT = `/me/player/currently-playing`;
 export async function nowPlaying(): Promise<Partial<SpotifyApi.CurrentlyPlayingResponse>> {
   const Authorization = await getAuthorizationToken();
   const response = await fetch(`${BASE_URL}${NOW_PLAYING_ENDPOINT}`, {
